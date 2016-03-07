@@ -38,10 +38,13 @@ public class Responder
      */
     public String generateResponse(String input)
     {
-        String respuesta = listaStrings.get(nAleat.nextInt(listaStrings.size()));
+        String respuesta;
         if (rExacta.containsKey(input)){
             respuesta = rExacta.get(input);
-        }        
+        }
+        else{
+            respuesta = listaStrings.get(nAleat.nextInt(listaStrings.size()));
+        }
         return respuesta;
     }
 }
